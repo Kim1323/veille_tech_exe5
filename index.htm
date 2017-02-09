@@ -1,60 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Tracer d'une figure SVG par l'événement scroll</title>
-	<style type="text/css">
-	html {
-		height : 200%;
-	}
-	
-	#monSVG {
-		position: fixed;
-	}
+	<head>
+		<title>Tracer d'une figure SVG par l'événement scroll</title>
+		<link rel="stylesheet" type="text/css" href="css/animation-svg.css">
+		<script type="text/javascript" src="script/animation-svg.js"></script>
+	</head>
 
-
-
-	/* Définir la couleur de fond, la couleur du contour, l'épaisseur du contour du path */
-
-	#monSVG path {
-		fill:none;
-
-		stroke:black;
-
-		stroke-width:1px;
-
-	}
-
-	</style>
-</head>
-
-<body>
-
-
-
-<svg 	id="monSVG" 
-
-		width="1000" 
-
-		height="500"
-
-		viewBox="-50 -50  1000   500"
-
-		preserveAspectRatio="xMidYMid  slice"
-
-		>
-
- <!--  Le path d'un triangle -->
-
-  <path d=" M 150 0
-  			L 75 200 
-  			L 225 200 
-  			Z"/>
-
-  <path d=" M 250 0
-  			L 175 300 
-  			L 325 300 
-  			Z"/>
-</svg>
+	<body>
+		<svg id="monSVG" width="1000" height="500" viewBox="-50 -50  1000   500" preserveAspectRatio="xMidYMid  slice" >
+			<path d=" M 150 0
+					  L 75 200 
+					  L 225 200 
+					  Z"
+			/>
+			<path d=" M 250 0
+		  			  L 175 300 
+		  			  L 325 300 
+		  			  Z"
+		  	/>
+		</svg>
 
 	<script>
 	// on cible l'élément « path » que l'on veut animer 
@@ -101,5 +65,5 @@ https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight
 	}
 	</script>
 
-</body>
+	</body>
 </html>
