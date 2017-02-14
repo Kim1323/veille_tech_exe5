@@ -3,7 +3,6 @@
 	<head>
 		<title>Tracer d'une figure SVG par l'événement scroll</title>
 		<link rel="stylesheet" type="text/css" href="css/animation-svg.css">
-		<script type="text/javascript" src="script/animation-svg.js"></script>
 	</head>
 
 	<body>
@@ -24,58 +23,19 @@
 		  			  L 100 100
 		  			  Z"
 		  	/>
+			<path d=" M 235 354
+		  			  L 434 464
+		  			  L 325 346
+		  			  L 155 304
+		  			  Z"
+		  	/>
+			<path d=" M 500 300
+		  			  L 400 100
+		  			  L 100 450
+		  			  Z"
+		  	/>
 		</svg>
 
-
-		<script>
-			// on cible l'élément « path » que l'on veut animer 
-			var triangle = document.querySelectorAll("#monSVG path")[0];
-			var triangle2 = document.querySelectorAll("#monSVG path")[1];
-			var carre = document.querySelectorAll("#monSVG path")[2];
-
-			// la longueur du chemin «path»
-			var longueur = triangle.getTotalLength();
-			var longueur2 = triangle2.getTotalLength();
-			var longueur3 = carre.getTotalLength();
-
-			//console.log(longueur)
-
-			// La longueur du tracé
-			// https://developer.mozilla.org/en/docs/Web/SVG/Attribute/stroke-dasharray
-
-			triangle.style.strokeDasharray = longueur;
-			triangle2.style.strokeDasharray = longueur2;
-			carre.style.strokeDasharray = longueur3;
-
-			// On fait disparaître le tracé en appliquant la propriété css strokeDashoffset sur toute la longueur du chemin
-			triangle.style.strokeDashoffset = longueur;
-			triangle2.style.strokeDashoffset = longueur2;
-			carre.style.strokeDashoffset = longueur3;
-
-			// extraire la fraction du déplacement de la barre de défilement et  ajusté le tracé
-			window.addEventListener("scroll", maTrace);
-
-			function maTrace() {
-
-				console.log('scrollTop de body = ' + document.body.scrollTop)
-				console.log('scrollTop de documentElement = ' + document.documentElement.scrollTop)
-				console.log('scrollHeight de documentElement = ' + document.documentElement.scrollHeight)	
-				console.log('clientHeight de documentElement = ' + document.documentElement.clientHeight)			
-
-		https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight
-
-			  var fractionDuScroll = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
-			  var trace = longueur * fractionDuScroll;
-			  var trace2 = longueur2 * fractionDuScroll;
-			  var trace3 = longueur3 * fractionDuScroll;
-
-			  // tracé selon la fraction de «scroll»
-			  triangle.style.strokeDashoffset = longueur - trace ;
-			  triangle2.style.strokeDashoffset = longueur2 - trace2 ;
-			  carre.style.strokeDashoffset = longueur3 - trace3 ;
-			}
-		</script>
-
+		<script type="text/javascript" src="script/animation-svg.js"></script>
 	</body>
 </html>
